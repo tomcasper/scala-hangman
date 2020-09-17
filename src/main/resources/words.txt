@@ -1,0 +1,3 @@
+pencilcase
+house
+mailbox
