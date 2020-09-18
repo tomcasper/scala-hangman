@@ -2,7 +2,7 @@ package com.tcasper
 
 object Man {
 
-  def showInitial: Unit = {
+  def showZeroOuts(currentWord: String, currentOuts: Int, guesses: List[Char]): Unit = {
     println("""    ----------""")
     println("""    |        |""")
     println("""    |        |""")
@@ -14,9 +14,21 @@ object Man {
     println("""    |         """)
     println("""    |         """)
     println("""---------""")
+    displayCurrentState(currentWord)
+    println()
   }
 
-  def showFirstOut: Unit = {
+  def displayCurrentState(word: String): Unit = {
+    for (i <- 0 until word.length) {
+      print("__ ")
+    }
+    /*
+      1. try using the letters guessed by the player in a Set, and somehow take the disjoint union of that Set with
+         the word in "__ __ __ ... __ __" form
+     */
+  }
+
+  def showFirstOut(): Unit = {
     println("""    ----------""")
     println("""    |        |""")
     println("""    |        |""")
@@ -30,7 +42,7 @@ object Man {
     println("""---------""")
   }
 
-  def showSecondOut = {
+  def showSecondOut(): Unit = {
     println("""    ----------""")
     println("""    |        |""")
     println("""    |        |""")
@@ -44,7 +56,7 @@ object Man {
     println("""---------""")
   }
 
-  def showThirdOut = {
+  def showThirdOut(): Unit = {
     println("""    ----------""")
     println("""    |        |""")
     println("""    |        |""")
@@ -58,7 +70,7 @@ object Man {
     println("""---------""")
   }
 
-  def showFourthOut = {
+  def showFourthOut(): Unit = {
     println("""    ----------""")
     println("""    |        |""")
     println("""    |        |""")
@@ -72,7 +84,7 @@ object Man {
     println("""---------""")
   }
 
-  def showFifthOut = {
+  def showFifthOut(): Unit = {
     println("""    ----------""")
     println("""    |        |""")
     println("""    |        |""")
@@ -86,7 +98,7 @@ object Man {
     println("""---------""")
   }
 
-  def showSixthOut = {
+  def showSixthOut(): Unit = {
     println("""    ----------""")
     println("""    |        |""")
     println("""    |        |""")
@@ -100,7 +112,7 @@ object Man {
     println("""---------""")
   }
 
-  def showSeventhOut = {
+  def showSeventhOut(): Unit = {
     println("""    ----------""")
     println("""    |        |""")
     println("""    |        |""")

@@ -7,27 +7,21 @@ object Hangman extends App {
   val filename = "/Users/tcasper/dev/hangman/src/main/resources/words.txt"
   val words = for (word <- Source.fromFile(filename).getLines()) yield word
   val wordsList = words.toList
-
+  val gameNotOver: Boolean = true
   val currentWord = wordsList.head
-  val currentWordSize = currentWord.length
+  println(s"current word = $currentWord") // TODO remove this
 
-  println(s"current word = $currentWord")
+  Man.showZeroOuts(currentWord, 0, List.empty)
 
-  Man.showInitial
-  for (i <- 0 until currentWordSize) {
-    print("__ ")
-  }
+  val guess = scala.io.StdIn.readChar()
+  println(currentWord.map(c => compareChars(guess, c)))
 
-  println()
-  print("Enter a letter: ")
-  val letterGuess = scala.io.StdIn.readLine()
+  def compareChars(c1: Char, c2: Char): String = if (c1 == c2) c1.toString else "__ "
 
-  def insertLatestGuess(guess: Char): Int = {
-    0
-  }
-
-  def initializeGame() = {
-
-  }
-
+  //  print("Enter a letter: ")
+//  val letterGuess = {
+//    while (gameNotOver) {
+//      scala.io.StdIn.readLine()
+//    }
+//  }
 }
