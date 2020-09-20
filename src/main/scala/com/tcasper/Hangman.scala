@@ -11,10 +11,15 @@ object Hangman extends App {
   val currentWord = wordsList.head
   println(s"current word = $currentWord") // TODO remove this
 
-  Man.showZeroOuts(currentWord, 0, List.empty)
+  while (true) {
+    val guess = scala.io.StdIn.readChar()
+    val updatedWord = currentWord.map(c => compareChars(guess, c))
+    println(updatedWord)
+    Man.showZeroOuts(currentWord, 0, List.empty)
 
-  val guess = scala.io.StdIn.readChar()
-  println(currentWord.map(c => compareChars(guess, c)))
+
+  }
+
 
   def compareChars(c1: Char, c2: Char): String = if (c1 == c2) c1.toString else "__ "
 
